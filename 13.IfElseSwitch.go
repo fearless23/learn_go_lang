@@ -33,6 +33,7 @@ func ifelse() {
 		gologv("color is default", "")
 	}
 
+	// Type Switch
 	var i interface{} = [1]int{1}
 	switch i.(type) {
 	case int:

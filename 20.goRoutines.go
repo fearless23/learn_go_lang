@@ -1,5 +1,5 @@
 package main
 
-func maiion() {
+func main() {
 
 }

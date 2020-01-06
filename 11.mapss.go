@@ -2,6 +2,12 @@ package main
 
 func mapss() {
 
+	/*
+		Maps are like maps in JS or for holding values
+		of same type like student grades name-->grade,
+		population state --> population
+	*/
+
 	var grades = map[string](int){
 		"user1": 30,
 		"user2": 23,

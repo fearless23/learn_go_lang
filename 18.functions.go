@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func functionsGO() {
 	sayMessage("Hello")
@@ -24,6 +26,8 @@ func functionsGO() {
 
 	// Declare anonymous fn
 	// afn not available in main, before this
+	//   var =   let in JS
+	// const = const in JS
 	var afn func(i int, j int) int
 	afn = func(i, j int) int {
 		return i + j
@@ -116,4 +120,15 @@ func (u myUser) getFullName() string {
 func (u *myUser) setFullName() {
 	// Use pointer to
 	u.fullName = u.firstName + u.lastName
+}
+
+// Functions can receive and return pointers.
+// Returning pointers of variables created inside func
+// when a variable is created inside func, it is
+// destroyed/deleted after func executes, but if we
+// return a pointer, GO moves memory from heap to shared for
+// that pointer.
+func getNums(n int) *[5]int {
+	var roles = [5]int{1,2,3,4,5}
+	return &roles
 }
