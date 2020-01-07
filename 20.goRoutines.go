@@ -8,7 +8,7 @@ var wg = sync.WaitGroup{}
 var counter = 0
 var m = sync.RWMutex{}
 
-func main() {
+func goroutines() {
 	msg := "hello"
 
 	// wg.Add(1)
