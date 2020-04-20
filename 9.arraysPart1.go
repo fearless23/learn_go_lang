@@ -41,7 +41,7 @@ func arrPart1() {
 	fmt.Printf("c: %v, %T\n\n", c, c)
 
 	// Slice, empty [] before dec
-	var x = []int{1, 2, 3, 4, 5} 
+	var x = []int{1, 2, 3, 4, 5}
 	var y = x
 	// Any variable equals a slice
 	// is actually a pointer, unlike array is does
