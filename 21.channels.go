@@ -23,11 +23,11 @@ type logEntry struct {
 
 var logChannel = make(chan logEntry, 50)
 
-func main() {
+func main2() {
 	// ch := make(chan int)
 	// gologl(ch)
 	// runTimes(ch, 2)
-	
+
 	defer closeLogger()
 	go myLogger()
 	logChannel <- logEntry{time.Now(), logInfo, "App is Starting"}
