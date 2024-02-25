@@ -65,7 +65,7 @@ func cantRecover() {
 	a := 1
 	log("cantRecover a", a)
 
-	defer repanic()
+	defer Repanic()
 
 	panic("Error from cantRecover Func")
 	// gologv("End of insideFn, never reached", "")
@@ -78,7 +78,7 @@ func recoverErr() {
 	}
 }
 
-func repanic() {
+func Repanic() {
 	err := recover()
 	if err != nil {
 		log("$", "Error Recovered")
