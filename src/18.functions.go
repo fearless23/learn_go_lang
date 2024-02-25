@@ -4,49 +4,92 @@ import (
 	"fmt"
 )
 
-func FunctionsGO() {
-	sayMessage("Hello")
-	s := sum2(1, 2, 3, 4, 5, 6)
-	gologv("Sum", s)
+func Functions() {
+	a := sayMessage("Hello")
+	log("a", a)
 
+	divider()
+	s1 := sum(1, 2, 3, 4, 5, 6)
+	log("Sum s1", s1)
+
+	divider()
+	s2 := sum2(1, 2, 3, 4, 5, 6)
+	log("Sum s2", s2)
+
+	divider()
 	d, err := divide(4.0, 0.0)
-	gologv("err", err)
-	gologv("d", d)
+	log("err", err)
+	log("d", d)
+
+	divider()
+	k := getNums()
+	log("k", k)
 
 	// Anonymous Function
 	fn := func() {
-		gologv("$", "anonymous fn")
+		log("$", "anonymous fn")
 	}
 	fn()
 
 	// Anonymous Function - IIFE
 	func() {
-		gologv("Hello GO", "")
+		log("Hello GO", "")
 	}()
 
 	// Declare anonymous fn
 	// afn not available in main, before this
 	//   var =   let in JS
 	// const = const in JS
-	var afn func(i int, j int) int
-	afn = func(i, j int) int {
+
+	// var afn func(i int, j int) int
+	afn := func(i, j int) int {
 		return i + j
 	}
-
 	afn(2, 3)
 
+	// -----------------------
+
+	divider()
 	user1 := myUser{
 		firstName: "Jaspreet",
 		lastName:  "Singh",
+		fullName:  "original-full-name",
+		age:       35,
 	}
 
-	gologv("user1", user1)
+	log("user1 (created)", user1)
 
 	fullName := user1.getFullName()
-	gologv("user1:fullName", fullName)
+	log("user1:fullName", fullName)
+	log("user1 (user1 passed to function and modified)", user1)
+	// getFullName function changes fullName on user1 passed to function
+	// but it do not modify user1 instance
 
 	user1.setFullName()
-	gologv("user1", user1)
+	log("user1 (user1 reference passed and modified)", user1)
+	// setFullName function changes fullName on user1 reference passed to function
+	// and it does modify user1 instance
+
+	divider()
+	// let do same thing with map; as we did with user1
+	myMap := map[string](int){
+		"a": 1,
+		"b": 2,
+	}
+	log("myMap (created)", myMap)
+
+	returnedMap := intakeSomeMap(myMap)
+	log("myMap (after modification in func)", myMap)
+	log("returnedMap", returnedMap)
+
+	// passing map to function which internally changes it, behaves as passed-by-reference
+
+	// So, conclusion is
+	// any type passed to function which is internally modified in function,
+	// behaves similar to their copy traits
+	// maps are copied-by-reference and  same behaviour is seen when map passed to func
+	// strcut are copeid-by-value and same behaviour is seen when passed to func
+	// Note that; if we pass pointer (&value); internal modification always modify passed value obviously
 
 }
 
@@ -91,7 +134,7 @@ func sum2(values ...int) (result int) {
 // Return multiple types
 func divide(a, b float64) (float64, error) {
 	if b == 0.0 {
-		return 0.0, fmt.Errorf("Cannot divide by zero")
+		return 0.0, fmt.Errorf("cannot divide by zero")
 	}
 	return a / b, nil
 }
@@ -106,10 +149,9 @@ type myUser struct {
 // Method on myUser struct - Immutable
 func (u myUser) getFullName() string {
 	// Copy is created here of the struct,
-	// changes in u here dont change u outside
-	// of this function
+	// changes in u here dont change u outside of this function
 	// To change values outside, pass pointer...
-	// see setFullNameG
+	// see setFullName function below
 	// use these methods for returning a value
 	u.fullName = u.firstName + " " + u.lastName
 	// above line will not change instance of u.
@@ -128,7 +170,42 @@ func (u *myUser) setFullName() {
 // destroyed/deleted after func executes, but if we
 // return a pointer, GO moves memory from heap to shared for
 // that pointer.
-func getNums(n int) *[5]int {
+func getNums() *[5]int {
 	var roles = [5]int{1, 2, 3, 4, 5}
 	return &roles
 }
+
+func intakeSomeMap(m map[string](int)) map[string](int) {
+	m["c"] = 3
+	return m
+}
+
+func NonMain() {
+
+	i2 := [3][3]int{{1, 2, 3}, {10, 20, 30}, {7, 8, 9}}
+	j2 := i2 // this is a deep-copy
+	i2[0][0] = 1000
+	log("j2", j2)
+	log("i2", i2)
+}
+
+// Function with receivers
+/*
+normal function
+
+func add(a int, b int) int {
+	return a + b
+}
+
+
+---> function with receiver (defining class methods with value of receiver)
+func (receiver int) sum(b int) int {
+	return receiver + int
+}
+
+---> function with recevier as pointer (defining class methods with pointer to receiver)
+// similar to this in javascript
+func (receiver *int) sum(b int) int {
+	return receiver + int
+}
+*/

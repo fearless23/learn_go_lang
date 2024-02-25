@@ -5,16 +5,16 @@ import (
 )
 
 func Constants() {
-	const name string = "fearless"
+	const name = "fearless"
 	// Constants can only be made up of
 	// hard code or combination of constants
-	const a = "My name is " + name
+	const newName = "My name is " + name
 
 	// Var cant be used with constant.
-	var name2 = "Jaspreet"
+	// var name2 = "Jaspreet"
 	// const b = "My name is " + name2
 
-	var c = "My name is " + name2
+	var c = "My name is " + newName
 	fmt.Printf("%v, %T\n", c, c)
 
 	const i = 42
@@ -29,10 +29,8 @@ func Constants() {
 
 	var x = 42
 	var y = 5.7
-	// var z = i + j ERROR
-	// variables of different number types
-	// can`t be added
+	// var z = x + y // error as x and y of different type (int + float)
 	fmt.Printf("%v, %T\n", x, x)
 	fmt.Printf("%v, %T\n", y, y)
-	// fmt.Printf("%v, %T\n", k, k)
+	// fmt.Printf("%v, %T\n", z, z)
 }

@@ -4,18 +4,21 @@ import (
 	"fmt"
 )
 
-func golog(a string, b interface{}) {
-	fmt.Printf(a+": %v, %T\n", b, b)
-}
-
-func gologl(b interface{}) {
-	fmt.Println(b)
-}
-
-func gologv(a string, b interface{}) {
+// Print message with any value
+func log(a string, b interface{}) {
 	fmt.Printf(a+": %v\n", b)
 }
 
-func Gologs(a string, b interface{}) {
-	fmt.Printf(a+": %s\n", b)
+// Print message with any value and its type
+func logWithType(message string, value interface{}) {
+	fmt.Printf(message+"(%T): %v\n", value, value)
+}
+
+// Print value with Println
+func print(value any) {
+	fmt.Println(value)
+}
+
+func divider() {
+	print("----------------------------")
 }

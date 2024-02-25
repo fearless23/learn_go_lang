@@ -39,21 +39,21 @@ func CfPanic() {
 	*/
 
 	a, b := 1, "end"
-	gologv("a", a)
+	log("a", a)
 	willRecover()
-	gologv("", b)
+	log("", b)
 }
 
 func willPanic() {
 	a := 1
-	gologv("willPanic a", a)
+	log("willPanic a", a)
 	panic("Error from willPanic Func")
 	// gologv("End of insideFn, never reached", "")
 }
 
 func willRecover() {
 	a := 1
-	gologv("inside willRecover a", a)
+	log("inside willRecover a", a)
 
 	defer recoverErr()
 
@@ -63,7 +63,7 @@ func willRecover() {
 
 func cantRecover() {
 	a := 1
-	gologv("cantRecover a", a)
+	log("cantRecover a", a)
 
 	defer repanic()
 
@@ -74,15 +74,15 @@ func cantRecover() {
 func recoverErr() {
 	err := recover()
 	if err != nil {
-		gologv("$", "Error Recovered")
+		log("$", "Error Recovered")
 	}
 }
 
 func repanic() {
 	err := recover()
 	if err != nil {
-		gologv("$", "Error Recovered")
-		gologv("$", "Repanicking...")
+		log("$", "Error Recovered")
+		log("$", "Repanicking...")
 		panic(err)
 	}
 }

@@ -44,7 +44,7 @@ routine.
 // Receive Data to Channel
 func receive(ch <-chan int) {
 	i := <-ch
-	gologl(i)
+	print(i)
 	wag.Done()
 }
 

@@ -10,8 +10,8 @@ import (
 
 func StringsAndRunes() {
 
-	var i string = "a"
-	j := []byte(i)
+	var i string = "ab"
+	j := []byte(i) // or []uint8(i)
 
 	var r = 'a'
 

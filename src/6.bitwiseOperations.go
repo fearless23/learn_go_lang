@@ -5,7 +5,6 @@ import (
 )
 
 func BitwiseOps() {
-
 	var a = 10 // Binary 2^3 + 2^1 = 1010
 	var b = 3  // Binary 2^1 + 2^0 = 11 or 0011
 

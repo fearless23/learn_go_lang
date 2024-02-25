@@ -5,14 +5,14 @@ func Loops() {
 	// for init i; cond for i; next val of i
 	// i is scoped to for loop only...
 	for i := 0; i < 5; i++ {
-		gologv("i", i)
+		log("i", i)
 	}
 
 	// j init outside, incr inside
 	// thus only cond is left
 	j := 0
 	for j < 5 {
-		gologv("j", j)
+		log("j", j)
 		j++
 	}
 
@@ -47,16 +47,21 @@ Main:
 	for i := 0; i <= 3; i++ {
 		for j := 0; j <= 5; j++ {
 			if i*j > 12 {
-				gologv("breaking at", i*j)
+				log("breaking at", i*j)
 				break Main
 			}
 		}
 	}
 
 	s := [...]int{1, 1, 2, 3, 5, 8, 13, 21, 32, 55, 87}
-	for k, v := range s {
-		gologv("key", k)
-		gologv("val", v)
+	for index, value := range s {
+		log("index", index)
+		log("value", value)
+	}
+
+	// quick loop for 5 times
+	for index := range [5]int{} {
+		log("index", index)
 	}
 
 	m := map[string]int{
@@ -64,7 +69,7 @@ Main:
 		"user2": 2,
 	}
 	for k, v := range m {
-		gologv("key", k)
-		gologv("val", v)
+		log("key", k)
+		log("val", v)
 	}
 }

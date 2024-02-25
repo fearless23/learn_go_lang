@@ -30,14 +30,18 @@ const (
 
 func EnumIota() {
 	var c int
-	fmt.Printf("%v, %T\n", ea, ea)
-	fmt.Printf("%v, %T\n", eb, eb)
-	fmt.Printf("%v\n", ea == eb)
-	fmt.Printf("%v\n", c == ea)
+	fmt.Printf("ea %v, %T\n", ea, ea)
+	fmt.Printf("eb %v, %T\n", eb, eb)
+	fmt.Printf("ea==eb %v\n", ea == eb)
+	fmt.Printf("c==ea%v\n", c == ea)
 
-	fmt.Printf("%v, %T\n", ex, ex)
-	fmt.Printf("%v, %T\n", ey, ey)
+	fmt.Printf("ex %v, %T\n", ex, ex)
+	fmt.Printf("ey %v, %T\n", ey, ey)
 
+	fmt.Printf("KB %v\n", KB)
+	fmt.Printf("MB is %d KB\n", MB/KB)
+	fmt.Printf("GB is %d MB\n", GB/MB)
+	fmt.Printf("TB is %d GB\n", TB/GB)
 	const fileSize float32 = 4 * 1024 * 1024 * 1024
 	fmt.Printf("%.2f GB\n", fileSize/GB)
 
