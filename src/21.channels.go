@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -23,7 +23,7 @@ type logEntry struct {
 
 var logChannel = make(chan logEntry, 50)
 
-func main2() {
+func MyChannels() {
 	// ch := make(chan int)
 	// gologl(ch)
 	// runTimes(ch, 2)

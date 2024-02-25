@@ -1,10 +1,10 @@
-package main
+package src
 
 import (
 	"fmt"
 )
 
-func aritmatics() {
+func Arithmatics() {
 
 	var i float32 = 42
 	var j float32 = 4

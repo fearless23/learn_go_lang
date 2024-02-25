@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -39,7 +39,7 @@ func (a myArrayType) Sum() int {
 }
 
 // Main Function
-func mainInterfaces() {
+func MainInterfaces() {
 	/*
 		goInt := 1
 		// No, Increment method	on GO int type

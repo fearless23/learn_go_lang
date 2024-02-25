@@ -1,6 +1,8 @@
-package main
+package src
 
-import ("reflect")
+import (
+	"reflect"
+)
 
 // lowercase u - make it unexported..
 
@@ -28,7 +30,7 @@ type loginType struct {
 	password string
 }
 
-func structs() {
+func Structs() {
 	var user1 = user{
 		name:   "Jaspreet",
 		Age:    30,

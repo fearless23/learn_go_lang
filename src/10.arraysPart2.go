@@ -1,6 +1,6 @@
-package main
+package src
 
-func arrayPart2() {
+func ArrayPart2() {
 	// var t = [...]int{0, 1, 2, 3, 4, 5}
 	var x = []int{0, 1, 2, 3, 4, 5}
 	// Slicing any of t(array) or x(slice)

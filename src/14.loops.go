@@ -1,6 +1,6 @@
-package main
+package src
 
-func lopps() {
+func Loops() {
 
 	// for init i; cond for i; next val of i
 	// i is scoped to for loop only...

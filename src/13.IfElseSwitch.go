@@ -1,6 +1,6 @@
-package main
+package src
 
-func ifelse() {
+func Ifelse() {
 
 	if true {
 		gologv("$", "inside if block")

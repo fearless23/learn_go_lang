@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -28,7 +28,7 @@ const (
 	TB
 )
 
-func enumIota() {
+func EnumIota() {
 	var c int
 	fmt.Printf("%v, %T\n", ea, ea)
 	fmt.Printf("%v, %T\n", eb, eb)

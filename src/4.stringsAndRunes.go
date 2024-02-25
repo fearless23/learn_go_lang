@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 // 	fmt.Printf("%v,%T\n", j, j)
 // }
 
-func stringsAndRunes() {
+func StringsAndRunes() {
 
 	var i string = "a"
 	j := []byte(i)

@@ -1,10 +1,10 @@
-package main
+package src
 
 import (
 	"fmt"
 )
 
-func myConstnts() {
+func Constants() {
 	const name string = "fearless"
 	// Constants can only be made up of
 	// hard code or combination of constants

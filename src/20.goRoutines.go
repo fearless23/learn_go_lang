@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"sync"
@@ -8,7 +8,7 @@ var wg = sync.WaitGroup{}
 var counter = 0
 var m = sync.RWMutex{}
 
-func goroutines() {
+func Goroutines() {
 	msg := "hello"
 
 	// wg.Add(1)

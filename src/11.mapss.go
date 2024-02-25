@@ -1,6 +1,6 @@
-package main
+package src
 
-func mapss() {
+func Maps() {
 
 	/*
 		Maps are like maps in JS or for holding values

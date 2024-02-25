@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ const (
 	speaker             // 10000
 )
 
-func enumCPart2() {
+func EnumCPart2() {
 	var user1Roles = admin | editor
 	var user2Roles = finance | speaker
 	// above puts 1`s at right places

@@ -1,6 +1,6 @@
-package main
+package src
 
-func myPaniccc() {
+func CfPanic() {
 	/*
 		Error Handling - Panic
 		Open non-existence file is not error or exception in GO

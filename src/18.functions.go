@@ -1,10 +1,10 @@
-package main
+package src
 
 import (
 	"fmt"
 )
 
-func functionsGO() {
+func FunctionsGO() {
 	sayMessage("Hello")
 	s := sum2(1, 2, 3, 4, 5, 6)
 	gologv("Sum", s)
@@ -129,6 +129,6 @@ func (u *myUser) setFullName() {
 // return a pointer, GO moves memory from heap to shared for
 // that pointer.
 func getNums(n int) *[5]int {
-	var roles = [5]int{1,2,3,4,5}
+	var roles = [5]int{1, 2, 3, 4, 5}
 	return &roles
 }

@@ -1,6 +1,6 @@
-package main
+package src
 
-func cfDefer() {
+func CfDefer() {
 	/*
 		Go executes left to right and
 		top to bottom.

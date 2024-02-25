@@ -1,4 +1,4 @@
-package main
+package src
 
 import (
 	"fmt"
@@ -16,6 +16,6 @@ func gologv(a string, b interface{}) {
 	fmt.Printf(a+": %v\n", b)
 }
 
-func gologs(a string, b interface{}) {
+func Gologs(a string, b interface{}) {
 	fmt.Printf(a+": %s\n", b)
 }

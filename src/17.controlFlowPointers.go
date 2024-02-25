@@ -1,6 +1,6 @@
-package main
+package src
 
-func pointterss() {
+func Pointers() {
 
 	a := 42
 	b := &a

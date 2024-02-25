@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"learn-go-lang/src"
 )
 
-func main1() {
-	println("Hello world!")
-	fmt.Print("Hello world!")
+func main() {
+	// src.Conversions()
+	src.StringsAndRunes()
 }

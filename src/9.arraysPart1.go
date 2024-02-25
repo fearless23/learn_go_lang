@@ -1,10 +1,10 @@
-package main
+package src
 
 import (
 	"fmt"
 )
 
-func arrPart1() {
+func ArrayPart1() {
 	threeNums := [3]int{1, 2, 3}
 	fmt.Printf("threeNums: %v, %T\n", threeNums, threeNums)
 
