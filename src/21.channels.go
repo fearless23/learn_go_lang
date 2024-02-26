@@ -44,7 +44,7 @@ routine.
 // Receive Data to Channel
 func receive(ch <-chan int) {
 	i := <-ch
-	print(i)
+	Print(i)
 	wag.Done()
 }
 

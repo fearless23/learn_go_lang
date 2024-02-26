@@ -52,14 +52,14 @@ func Structs() {
 	// are initialized by zero-value of each type like empty string for string; 0 for int etc...
 	divider()
 	logWithType("user1", user1)
-	log("user1.age", user1.Age)
-	log("user1.data", user1.data)
+	Log("user1.age", user1.Age)
+	Log("user1.data", user1.data)
 
 	var user2 user // or var user2 = user{} // empty initialization of all fields
 	user2.Age = 34
 
 	divider()
-	log("user2", user2)
+	Log("user2", user2)
 	logWithType("user2.name", user2.name)
 	logWithType("user2.height", user2.height)
 
@@ -81,14 +81,14 @@ func Structs() {
 	// Struct Tags - loginType
 	var t = reflect.TypeOf(loginType{})
 	var field, exist = t.FieldByName("username")
-	log("field-exist", exist)
-	log("tag", field.Tag)
+	Log("field-exist", exist)
+	Log("tag", field.Tag)
 
 	divider()
 	// Struct Tags - loginType
 	var l = loginType{username: "morethanthree", password: "Df"}
-	log("username", l.username)
-	log("password", l.password)
+	Log("username", l.username)
+	Log("password", l.password)
 
 	divider()
 
@@ -96,7 +96,7 @@ func Structs() {
 	if err != nil {
 		panic("cannot marshal bird1 to json")
 	}
-	log("bird1 json", string(out))
+	Log("bird1 json", string(out))
 	// If field of struct are camelCase; they are not exported to outside world
 	// since, json package is external to core go language, for json to work properly we need to
 	// expose struct fields and thus we have to use PascalCase (this is weird decision from go)
@@ -110,7 +110,7 @@ func Structs() {
 	if err != nil {
 		panic("cannot marshal jassi1 to json")
 	}
-	log("jassi json", string(out2))
+	Log("jassi json", string(out2))
 	// since struct userWithPascalCase field are PascalCase, all are exposed to outside world
 	// and thus json was able to parse them
 
@@ -123,17 +123,17 @@ func Structs() {
 	if err != nil {
 		panic("cannot marshal jassi2 to json")
 	}
-	log("jassi2 json", string(out3))
+	Log("jassi2 json", string(out3))
 	// since struct userWithJsonTags is same as userWithPascalCase, all fields are parse-able
 	// only difference is that json:xxx tags output the fields to be camelCase or any type of our choice
 
 	divider()
-	print("--> copying jassi struct instance")
+	Print("--> copying jassi struct instance")
 	var jassiCopy = jassi
 	jassi.FullName = "Happy"
-	print("--> changing original jassi struct instance .fullName property to Happy")
-	log("jassi", jassi)
-	log("jassiCopy", jassiCopy)
+	Print("--> changing original jassi struct instance .fullName property to Happy")
+	Log("jassi", jassi)
+	Log("jassiCopy", jassiCopy)
 
 	// jassiCopy and jassi are two different instances.
 	// Thus, copying an struct is copy-by-value

@@ -1,0 +1,19 @@
+@BASE=http://localhost:3000
+
+
+###
+GET {{BASE}}
+
+###
+
+GET {{BASE}}/hello?name=jaspreet
+content-type: application/json
+
+###
+POST {{BASE}}/hello
+content-type: application/json
+
+{
+  "name": "Jaspreet",
+  "age": 120
+}

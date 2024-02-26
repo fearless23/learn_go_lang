@@ -32,8 +32,8 @@ func Goroutines() {
 }
 
 func sayHello(msg string) {
-	log("Counter", counter)
-	log("msg", msg)
+	Log("Counter", counter)
+	Log("msg", msg)
 	m.RUnlock()
 	wg.Done()
 }

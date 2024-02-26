@@ -1,7 +1,8 @@
 package main
 
+// "learn-go-lang/src"
 import (
-	"learn-go-lang/src"
+	"learn-go-lang/httpServer"
 )
 
 func main() {
@@ -17,5 +18,6 @@ func main() {
 	// src.Functions()
 	// src.NonMain()
 	// src.Interfaces()
-	src.Time()
+	// src.Time()
+	httpServer.Server()
 }

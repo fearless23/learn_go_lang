@@ -5,7 +5,7 @@ import (
 )
 
 // Print message with any value
-func log(a string, b interface{}) {
+func Log(a string, b interface{}) {
 	fmt.Printf(a+": %v\n", b)
 }
 
@@ -15,10 +15,10 @@ func logWithType(message string, value interface{}) {
 }
 
 // Print value with Println
-func print(value any) {
+func Print(value any) {
 	fmt.Println(value)
 }
 
 func divider() {
-	print("----------------------------")
+	Print("----------------------------")
 }

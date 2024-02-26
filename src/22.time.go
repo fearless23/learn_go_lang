@@ -5,6 +5,6 @@ import (
 )
 
 func Time() {
-	log("time.April", time.April)
-	log("time.Now().Format(time.RFC3339)", time.Now().Format(time.RFC3339))
+	Log("time.April", time.April)
+	Log("time.Now().Format(time.RFC3339)", time.Now().Format(time.RFC3339))
 }

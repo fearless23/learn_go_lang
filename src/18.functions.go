@@ -6,34 +6,34 @@ import (
 
 func Functions() {
 	a := sayMessage("Hello")
-	log("a", a)
+	Log("a", a)
 
 	divider()
 	s1 := sum(1, 2, 3, 4, 5, 6)
-	log("Sum s1", s1)
+	Log("Sum s1", s1)
 
 	divider()
 	s2 := sum2(1, 2, 3, 4, 5, 6)
-	log("Sum s2", s2)
+	Log("Sum s2", s2)
 
 	divider()
 	d, err := divide(4.0, 0.0)
-	log("err", err)
-	log("d", d)
+	Log("err", err)
+	Log("d", d)
 
 	divider()
 	k := getNums()
-	log("k", k)
+	Log("k", k)
 
 	// Anonymous Function
 	fn := func() {
-		log("$", "anonymous fn")
+		Log("$", "anonymous fn")
 	}
 	fn()
 
 	// Anonymous Function - IIFE
 	func() {
-		log("Hello GO", "")
+		Log("Hello GO", "")
 	}()
 
 	// Declare anonymous fn
@@ -57,16 +57,16 @@ func Functions() {
 		age:       35,
 	}
 
-	log("user1 (created)", user1)
+	Log("user1 (created)", user1)
 
 	fullName := user1.getFullName()
-	log("user1:fullName", fullName)
-	log("user1 (user1 passed to function and modified)", user1)
+	Log("user1:fullName", fullName)
+	Log("user1 (user1 passed to function and modified)", user1)
 	// getFullName function changes fullName on user1 passed to function
 	// but it do not modify user1 instance
 
 	user1.setFullName()
-	log("user1 (user1 reference passed and modified)", user1)
+	Log("user1 (user1 reference passed and modified)", user1)
 	// setFullName function changes fullName on user1 reference passed to function
 	// and it does modify user1 instance
 
@@ -76,11 +76,11 @@ func Functions() {
 		"a": 1,
 		"b": 2,
 	}
-	log("myMap (created)", myMap)
+	Log("myMap (created)", myMap)
 
 	returnedMap := intakeSomeMap(myMap)
-	log("myMap (after modification in func)", myMap)
-	log("returnedMap", returnedMap)
+	Log("myMap (after modification in func)", myMap)
+	Log("returnedMap", returnedMap)
 
 	// passing map to function which internally changes it, behaves as passed-by-reference
 
@@ -185,8 +185,8 @@ func NonMain() {
 	i2 := [3][3]int{{1, 2, 3}, {10, 20, 30}, {7, 8, 9}}
 	j2 := i2 // this is a deep-copy
 	i2[0][0] = 1000
-	log("j2", j2)
-	log("i2", i2)
+	Log("j2", j2)
+	Log("i2", i2)
 }
 
 // Function with receivers

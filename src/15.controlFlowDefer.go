@@ -7,13 +7,13 @@ func CfDefer() {
 		Async behaviour is done in few wats
 	*/
 	a := 1
-	log("a", a)
+	Log("a", a)
 
 	b := 2
-	defer log("b", b)
+	defer Log("b", b)
 
 	c := 3
-	log("c", c)
+	Log("c", c)
 
 	/*
 		Defer take away the func from main flow
@@ -40,7 +40,7 @@ func CfDefer() {
 	*/
 
 	x := "start"
-	defer log("x", x)
+	defer Log("x", x)
 	x = "end"
 	// When defer was declared, value of x
 	// is eagerly used. Thus, it will print

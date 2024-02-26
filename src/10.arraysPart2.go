@@ -28,7 +28,7 @@ func ArrayPart2() {
 
 	// TLDR; slicing is copy-by-reference; thus slice points to original data-structure;
 	// So, change in original changes slice and vice-versa...
-	print("------------------------------------------------")
+	Print("------------------------------------------------")
 
 	var original = [...]int{0, 1, 2, 3, 4, 5, 6}
 	var slice = original[:4]
@@ -39,17 +39,17 @@ func ArrayPart2() {
 	// is pointing to a, if append is used
 	// b stops pointing to a
 	slice[1] = 15
-	print("--> slice[1] = 15")
+	Print("--> slice[1] = 15")
 	logWithType("slice", slice)
 	logWithType("original", original)
 	original[2] = 20
-	print("--> original[2] = 20")
+	Print("--> original[2] = 20")
 	logWithType("original", original)
 	logWithType("slice", slice)
 
-	print("------------------------------------------------")
+	Print("------------------------------------------------")
 
-	print("--> append(slice, 7, 8, 9, 10)")
+	Print("--> append(slice, 7, 8, 9, 10)")
 	slice = append(slice, 7, 8, 9, 10) // []int
 	// --> append creates new slice in memory, now `slice` do not point to original
 	// since we can append any number of int, it cannot properly point to original; thus it creates
@@ -57,13 +57,13 @@ func ArrayPart2() {
 	logWithType("new slice", slice)
 	logWithType("original", original)
 
-	print("--> slice[3] = 121 and original[3] = 786")
+	Print("--> slice[3] = 121 and original[3] = 786")
 	slice[3] = 121
 	original[3] = 786
 	logWithType("slice", slice)
 	logWithType("original", original)
 
-	print("---------------- SPREAD operator --------------------------------")
+	Print("---------------- SPREAD operator --------------------------------")
 	var p = []int{1, 2, 3}
 	var q = []int{4, 5, 6}
 	// append`s 1st arg should be slice only

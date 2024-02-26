@@ -68,41 +68,41 @@ func Interfaces() {
 	*/
 
 	myInt := myIntType(1)
-	log("myInt (1)", myInt)
+	Log("myInt (1)", myInt)
 	myInt.increment(10)
-	log("myInt +10", myInt)
+	Log("myInt +10", myInt)
 	myInt.decrement(5)
-	log("myInt -5", myInt)
+	Log("myInt -5", myInt)
 
 	var z myIntMethods = &myInt
 	// if we declare z as type of myIntMethods; then must z must have 2 methods present
 	// to do that; we set z to pointer to int type
 	// since int (myIntType) has those 2 methods; z will also have those methods
 	z.increment(1)
-	log("myInt +1", myInt)
+	Log("myInt +1", myInt)
 	z.decrement(4)
-	log("myInt -4", myInt)
+	Log("myInt -4", myInt)
 
 	myArray := myArrayType([]int{1, 2, 3})
 	sum := myArray.sum()
-	log("sum", sum)
+	Log("sum", sum)
 
 	var k myArrayMethods = &myArray
-	log("sum", k.sum())
+	Log("sum", k.sum())
 
 	myStruct := consoleWriter{}
 	writeResponse, err := myStruct.write([]byte{1, 2, 3})
 	if err != nil {
 		panic("something happen wrong")
 	}
-	log("writeResponse", writeResponse)
+	Log("writeResponse", writeResponse)
 
 	var writeC writer = &myStruct
 	writeResponse2, err := writeC.write([]byte{30, 40, 50})
 	if err != nil {
 		panic("something happen wrong")
 	}
-	log("writeResponse2", writeResponse2)
+	Log("writeResponse2", writeResponse2)
 
 	// Methods implemented receive data, pointer or value
 	// on type it is implemented. Interfaces related to

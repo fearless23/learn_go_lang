@@ -3,18 +3,18 @@ package src
 func Ifelse() {
 
 	if true {
-		log("$", "inside if block")
+		Log("$", "inside if block")
 	}
 
 	// With initializer
 	if true {
-		log("$", "init")
+		Log("$", "init")
 	}
 	if a := 3; a > 2 {
-		log("a inside if with init", a)
+		Log("a inside if with init", a)
 	}
 	if a, b := 2, 3; b < 4 {
-		log("", "inside if block with initializer")
+		Log("", "inside if block with initializer")
 		logWithType("a", a)
 		logWithType("b", b)
 	}
@@ -25,29 +25,29 @@ func Ifelse() {
 	switch color {
 	case "red":
 		{
-			log("color is red", "")
+			Log("color is red", "")
 		}
 	case "blue":
-		log("color is blue", "")
+		Log("color is blue", "")
 	case "1", "2", "3":
-		log("color is num string", color)
+		Log("color is num string", color)
 	default:
-		log("color is default", "")
+		Log("color is default", "")
 	}
 
 	// Type Switch
 	var i interface{} = [1]int{1}
 	switch i.(type) {
 	case int:
-		log("i is int", "")
+		Log("i is int", "")
 	case string:
-		log("i is string", "")
+		Log("i is string", "")
 	case float64:
-		log("i is float64", "")
+		Log("i is float64", "")
 	case []int:
-		log("i in array", "")
+		Log("i in array", "")
 	default:
-		log("i is none", "")
+		Log("i is none", "")
 	}
 
 	// Break is default behavior in go
