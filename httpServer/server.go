@@ -15,6 +15,7 @@ import (
 func rootHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("[REQUEST]: / \n")
 	io.WriteString(w, "This is my website!\n")
+	// w.Write([]byte("This is my website!\n")) // this also works
 }
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
@@ -24,14 +25,14 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 			fmt.Printf("[REQUEST]: GET /hello \n")
 			// ctx := r.Context()
 			name := r.URL.Query().Get("name")
-			io.WriteString(w, "Hello, "+name+"\n")
+			w.Write([]byte("Hello, " + name + "\n"))
 		}
 	case "POST":
 		{
 			fmt.Printf("[REQUEST]: POST /hello \n")
 			body := r.Body
 			basics.Log("body", body)
-			io.WriteString(w, "Hello, POST Hello!\n")
+			w.Write([]byte("Hello, POST Hello!\n"))
 		}
 	default:
 		{

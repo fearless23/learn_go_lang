@@ -5,7 +5,10 @@
 GET {{BASE}}
 
 ###
-GET {{BASE}}/hello/234?name=jaspreet
+GET {{BASE}}/healthcheck
+
+###
+GET {{BASE}}/hello/12?name=jaspreet
 content-type: application/json
 
 ###

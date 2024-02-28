@@ -10,3 +10,8 @@ Learning from Free Code
 - Revisit 3: 24 Feb 2024
   - learned packages, modules and 
   - revised concepts in basics folder (from 1 to 19)
+
+- 4: 28 Feb 2024
+  - learning json marshall/unmarshall
+  - uuid
+  - chi framework

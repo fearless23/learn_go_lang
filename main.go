@@ -2,7 +2,9 @@ package main
 
 import (
 	// "learn-go-lang/basics"
-	"learn-go-lang/httpServer"
+	// "learn-go-lang/httpServer"
+	// "learn-go-lang/utils"
+	"learn-go-lang/chi"
 )
 
 func main() {
@@ -19,5 +21,17 @@ func main() {
 	// basics.NonMain()
 	// basics.Interfaces()
 	// basics.Time()
-	httpServer.Server()
+	// basics.JsonArray()
+	// basics.JsonObject()
+	// basics.Classes()
+
+	// --- httpServer
+	// httpServer.Server()
+
+	// -- utils
+	// utils.Uuid()
+
+	// -- chi
+	chi.Server()
+
 }
