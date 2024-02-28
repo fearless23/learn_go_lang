@@ -1,4 +1,4 @@
-package src
+package basics
 
 func ArrayPart2() {
 	var originalArray = [...]int{0, 1, 2, 3, 4, 5}

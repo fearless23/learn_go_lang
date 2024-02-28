@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"learn-go-lang/src"
+	"learn-go-lang/basics"
 	"net/http"
 	"os"
 )
@@ -30,7 +30,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 		{
 			fmt.Printf("[REQUEST]: POST /hello \n")
 			body := r.Body
-			src.Log("body", body)
+			basics.Log("body", body)
 			io.WriteString(w, "Hello, POST Hello!\n")
 		}
 	default:
