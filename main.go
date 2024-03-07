@@ -25,7 +25,8 @@ func main() {
 	// basics.JsonArray()
 	// basics.JsonObject()
 	// basics.Classes()
-	basics.Goroutines3()
+	// basics.Goroutines3()
+	basics.Channels3()
 	// --- httpServer
 	// httpServer.Server()
 

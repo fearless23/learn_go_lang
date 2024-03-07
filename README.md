@@ -15,3 +15,7 @@ Learning from Free Code
   - learning json marshall/unmarshall
   - uuid
   - chi framework
+
+- 5: 7 March 2024
+  - revisit goroutines
+  - revisit channels
