@@ -4,7 +4,8 @@ import (
 	// "learn-go-lang/basics"
 	// "learn-go-lang/httpServer"
 	// "learn-go-lang/utils"
-	"learn-go-lang/chi"
+	"learn-go-lang/basics"
+	// "learn-go-lang/chi"
 )
 
 func main() {
@@ -24,7 +25,7 @@ func main() {
 	// basics.JsonArray()
 	// basics.JsonObject()
 	// basics.Classes()
-
+	basics.Goroutines3()
 	// --- httpServer
 	// httpServer.Server()
 
@@ -32,6 +33,6 @@ func main() {
 	// utils.Uuid()
 
 	// -- chi
-	chi.Server()
+	// chi.Server()
 
 }

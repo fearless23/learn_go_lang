@@ -36,6 +36,14 @@ func MyChannels() {
 	// wag.Wait()
 }
 
+func MyChannels2() {
+	ch := make(chan int)
+	// gologl(ch)
+	runTimes(ch, 2)
+
+	wag.Wait()
+}
+
 /*
 Channel is a way to share data between go
 routine.
